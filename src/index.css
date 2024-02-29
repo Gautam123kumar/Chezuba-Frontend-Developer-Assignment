@@ -11,3 +11,57 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.filter_box{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.table-data{
+  height: 80vh;
+  overflow-y: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+table,thead{
+  position: sticky;
+  top: 0;
+  height: 40px;
+}
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+th {
+  background-color: #f2f2f2;
+}
+tr:hover {
+  background-color: #f2f2f2;
+}
+
+/* Loading skeleton styles */
+.loading-row {
+  padding: 5px;
+  height: 50px; /* Adjust the height according to your row height */
+  background-color: #f2f2f2; /* Background color of the loading skeleton */
+}
+
+.loading-row::before {
+  content: '\00a0'; /* Non-breaking space to create a shimmer effect */
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, transparent 0%, #e0e0e0 50%, transparent 100%);
+  animation: shimmer 1s infinite linear; /* Animation for shimmer effect */
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
